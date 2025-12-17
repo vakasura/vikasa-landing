@@ -94,12 +94,14 @@
   pointer-events: none;
 }
 
-/* On button hover, crossfade to fast animation */
-body:has(.button-creative:hover) .logo-slow {
+/* On button hover or animating state, crossfade to fast animation */
+body:has(.button-creative:hover) .logo-slow,
+body:has(.button-animating) .logo-slow {
   opacity: 0;
 }
 
-body:has(.button-creative:hover) .logo-fast {
+body:has(.button-creative:hover) .logo-fast,
+body:has(.button-animating) .logo-fast {
   opacity: 1;
 }
 
@@ -115,58 +117,76 @@ body:has(.button-creative:hover) .logo-fast {
   background: #222;
 }
 
-/* Logo expands dramatically when button is hovered */
+/* Logo expands dramatically when button is hovered or animating */
 body:has(.button-creative:hover) .logo-slow path,
-body:has(.button-creative:hover) .logo-fast path {
+body:has(.button-creative:hover) .logo-fast path,
+body:has(.button-animating) .logo-slow path,
+body:has(.button-animating) .logo-fast path {
   transform: translate(var(--expand-x, 0), var(--expand-y, 0)) !important;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* Define expansion directions for each petal */
 body:has(.button-creative:hover) .logo-slow path:nth-child(1),
-body:has(.button-creative:hover) .logo-fast path:nth-child(1) {
+body:has(.button-creative:hover) .logo-fast path:nth-child(1),
+body:has(.button-animating) .logo-slow path:nth-child(1),
+body:has(.button-animating) .logo-fast path:nth-child(1) {
   --expand-x: 0px;
   --expand-y: -60px;
 }
 
 body:has(.button-creative:hover) .logo-slow path:nth-child(2),
-body:has(.button-creative:hover) .logo-fast path:nth-child(2) {
+body:has(.button-creative:hover) .logo-fast path:nth-child(2),
+body:has(.button-animating) .logo-slow path:nth-child(2),
+body:has(.button-animating) .logo-fast path:nth-child(2) {
   --expand-x: 42px;
   --expand-y: -42px;
 }
 
 body:has(.button-creative:hover) .logo-slow path:nth-child(3),
-body:has(.button-creative:hover) .logo-fast path:nth-child(3) {
+body:has(.button-creative:hover) .logo-fast path:nth-child(3),
+body:has(.button-animating) .logo-slow path:nth-child(3),
+body:has(.button-animating) .logo-fast path:nth-child(3) {
   --expand-x: 60px;
   --expand-y: 0px;
 }
 
 body:has(.button-creative:hover) .logo-slow path:nth-child(4),
-body:has(.button-creative:hover) .logo-fast path:nth-child(4) {
+body:has(.button-creative:hover) .logo-fast path:nth-child(4),
+body:has(.button-animating) .logo-slow path:nth-child(4),
+body:has(.button-animating) .logo-fast path:nth-child(4) {
   --expand-x: 42px;
   --expand-y: 42px;
 }
 
 body:has(.button-creative:hover) .logo-slow path:nth-child(5),
-body:has(.button-creative:hover) .logo-fast path:nth-child(5) {
+body:has(.button-creative:hover) .logo-fast path:nth-child(5),
+body:has(.button-animating) .logo-slow path:nth-child(5),
+body:has(.button-animating) .logo-fast path:nth-child(5) {
   --expand-x: 0px;
   --expand-y: 60px;
 }
 
 body:has(.button-creative:hover) .logo-slow path:nth-child(6),
-body:has(.button-creative:hover) .logo-fast path:nth-child(6) {
+body:has(.button-creative:hover) .logo-fast path:nth-child(6),
+body:has(.button-animating) .logo-slow path:nth-child(6),
+body:has(.button-animating) .logo-fast path:nth-child(6) {
   --expand-x: -42px;
   --expand-y: 42px;
 }
 
 body:has(.button-creative:hover) .logo-slow path:nth-child(7),
-body:has(.button-creative:hover) .logo-fast path:nth-child(7) {
+body:has(.button-creative:hover) .logo-fast path:nth-child(7),
+body:has(.button-animating) .logo-slow path:nth-child(7),
+body:has(.button-animating) .logo-fast path:nth-child(7) {
   --expand-x: -60px;
   --expand-y: 0px;
 }
 
 body:has(.button-creative:hover) .logo-slow path:nth-child(8),
-body:has(.button-creative:hover) .logo-fast path:nth-child(8) {
+body:has(.button-creative:hover) .logo-fast path:nth-child(8),
+body:has(.button-animating) .logo-slow path:nth-child(8),
+body:has(.button-animating) .logo-fast path:nth-child(8) {
   --expand-x: -42px;
   --expand-y: -42px;
 }
