@@ -7,9 +7,11 @@
     <animateTransform
       attributeName="transform"
       type="translate"
-      values="0,0; 0,-20; 0,0"
+      values="0,0; 0,-20; 0,-20; 0,0; 0,0"
+      keyTimes="0; 0.2; 0.7; 0.9; 1"
       dur="2s"
-      repeatCount="indefinite"/>
+      repeatCount="indefinite"
+      calcMode="linear"/>
   </path>
 
   <!-- Top-right petal (diagonal diamond) - moves up-right -->
@@ -17,9 +19,11 @@
     <animateTransform
       attributeName="transform"
       type="translate"
-      values="0,0; 14,-14; 0,0"
+      values="0,0; 14,-14; 14,-14; 0,0; 0,0"
+      keyTimes="0; 0.2; 0.7; 0.9; 1"
       dur="2s"
-      repeatCount="indefinite"/>
+      repeatCount="indefinite"
+      calcMode="linear"/>
   </path>
 
   <!-- Right petal (horizontal diamond) - moves right -->
@@ -27,9 +31,11 @@
     <animateTransform
       attributeName="transform"
       type="translate"
-      values="0,0; 20,0; 0,0"
+      values="0,0; 20,0; 20,0; 0,0; 0,0"
+      keyTimes="0; 0.2; 0.7; 0.9; 1"
       dur="2s"
-      repeatCount="indefinite"/>
+      repeatCount="indefinite"
+      calcMode="linear"/>
   </path>
 
   <!-- Bottom-right petal (diagonal diamond) - moves down-right -->
@@ -37,9 +43,11 @@
     <animateTransform
       attributeName="transform"
       type="translate"
-      values="0,0; 14,14; 0,0"
+      values="0,0; 14,14; 14,14; 0,0; 0,0"
+      keyTimes="0; 0.2; 0.7; 0.9; 1"
       dur="2s"
-      repeatCount="indefinite"/>
+      repeatCount="indefinite"
+      calcMode="linear"/>
   </path>
 
   <!-- Bottom petal (vertical diamond) - moves down -->
@@ -47,9 +55,11 @@
     <animateTransform
       attributeName="transform"
       type="translate"
-      values="0,0; 0,20; 0,0"
+      values="0,0; 0,20; 0,20; 0,0; 0,0"
+      keyTimes="0; 0.2; 0.7; 0.9; 1"
       dur="2s"
-      repeatCount="indefinite"/>
+      repeatCount="indefinite"
+      calcMode="linear"/>
   </path>
 
   <!-- Bottom-left petal (diagonal diamond) - moves down-left -->
@@ -57,9 +67,11 @@
     <animateTransform
       attributeName="transform"
       type="translate"
-      values="0,0; -14,14; 0,0"
+      values="0,0; -14,14; -14,14; 0,0; 0,0"
+      keyTimes="0; 0.2; 0.7; 0.9; 1"
       dur="2s"
-      repeatCount="indefinite"/>
+      repeatCount="indefinite"
+      calcMode="linear"/>
   </path>
 
   <!-- Left petal (horizontal diamond) - moves left -->
@@ -67,9 +79,11 @@
     <animateTransform
       attributeName="transform"
       type="translate"
-      values="0,0; -20,0; 0,0"
+      values="0,0; -20,0; -20,0; 0,0; 0,0"
+      keyTimes="0; 0.2; 0.7; 0.9; 1"
       dur="2s"
-      repeatCount="indefinite"/>
+      repeatCount="indefinite"
+      calcMode="linear"/>
   </path>
 
   <!-- Top-left petal (diagonal diamond) - moves up-left -->
@@ -77,8 +91,10 @@
     <animateTransform
       attributeName="transform"
       type="translate"
-      values="0,0; -14,-14; 0,0"
+      values="0,0; -14,-14; -14,-14; 0,0; 0,0"
+      keyTimes="0; 0.2; 0.7; 0.9; 1"
       dur="2s"
-      repeatCount="indefinite"/>
+      repeatCount="indefinite"
+      calcMode="linear"/>
   </path>
 </svg>
