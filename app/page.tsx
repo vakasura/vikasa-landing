@@ -9,11 +9,11 @@ export default function Home() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
             <Image
-              src="/vikasa-logo-black.png"
+              src="/vikasa-logo.svg"
               alt="Vikasa Logo"
               width={200}
-              height={60}
-              className="mb-4 mx-auto animate-bloom"
+              height={200}
+              className="mb-4 mx-auto animate-pulse-rotate"
             />
             <h1 className="text-4xl md:text-5xl font-light mb-8 tracking-tight relative z-10">
               vikasa
