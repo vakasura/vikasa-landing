@@ -139,6 +139,10 @@
   z-index: 1;
 }
 
+.stars-visible {
+  opacity: 1;
+}
+
 body:has(.contact-button:hover) .stars-container {
   opacity: 1;
 }
@@ -171,6 +175,10 @@ body:has(.contact-button:hover) main {
 }
 
 body:has(.contact-button:hover) .logo-slow {
+  filter: invert(1);
+}
+
+.logo-inverted {
   filter: invert(1);
 }
 

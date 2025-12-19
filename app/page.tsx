@@ -6,18 +6,28 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     setIsLoaded(true);
   }, []);
 
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <main className="min-h-screen bg-white text-black flex items-center justify-center transition-colors duration-700 ease-in-out relative overflow-hidden">
+    <main
+      className={`min-h-screen flex items-center justify-center transition-colors duration-700 ease-in-out relative overflow-hidden ${
+        isDarkMode ? 'bg-black text-white' : 'bg-white text-black'
+      }`}
+      onClick={toggleDarkMode}
+    >
       {/* Animated Background */}
       <div className="background-gradient" />
 
       {/* Night Sky Stars */}
-      <div className="stars-container">
+      <div className={`stars-container ${isDarkMode ? 'stars-visible' : ''}`}>
         {[...Array(50)].map((_, i) => (
           <div
             key={i}
@@ -45,7 +55,7 @@ export default function Home() {
                 alt="Vikasa Logo"
                 width={200}
                 height={200}
-                className="logo-slow absolute inset-0"
+                className={`logo-slow absolute inset-0 ${isDarkMode ? 'logo-inverted' : ''}`}
               />
             </div>
             <h1
@@ -64,8 +74,10 @@ export default function Home() {
             </p>
             <Button
               size="lg"
-              className={`contact-button bg-black text-white hover:bg-white hover:text-black rounded-lg font-light px-8 relative z-10 transition-all duration-700 ease-in-out hover:-translate-y-1 hover:shadow-2xl ${
+              className={`contact-button rounded-lg font-light px-8 relative z-10 transition-all duration-700 ease-in-out hover:-translate-y-1 hover:shadow-2xl ${
                 isLoaded ? "button-loaded" : ""
+              } ${
+                isDarkMode ? 'bg-white text-black hover:bg-white hover:brightness-90' : 'bg-black text-white hover:bg-white hover:text-black'
               }`}
               asChild
             >
@@ -73,10 +85,14 @@ export default function Home() {
                 href="https://cal.com/gaurav-ranganath-qtw4rb/30min"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
               >
                 Get in Touch
               </a>
             </Button>
+
+            {/* Mobile hint */}
+            <p className="text-xs mt-4 opacity-50 md:hidden">Tap anywhere to toggle theme</p>
           </div>
         </div>
       </section>
