@@ -58,21 +58,6 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Shooting Stars */}
-      <div className={`shooting-stars-container ${isDarkMode ? 'stars-visible' : ''}`}>
-        {[...Array(3)].map((_, i) => (
-          <div
-            key={i}
-            className="shooting-star"
-            style={{
-              top: `${Math.random() * 50}%`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${i * 8 + Math.random() * 3}s`,
-            }}
-          />
-        ))}
-      </div>
-
       {/* Hero Section */}
       <section className="relative z-10">
         <div className="container mx-auto px-6">
