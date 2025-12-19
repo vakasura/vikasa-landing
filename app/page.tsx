@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <main
-      className={`min-h-screen flex items-center justify-center transition-colors duration-700 ease-in-out relative overflow-hidden ${
+      className={`h-screen flex items-center justify-center transition-colors duration-700 ease-in-out relative overflow-hidden ${
         isDarkMode ? 'bg-black text-white' : 'bg-white text-black'
       }`}
       onClick={toggleDarkMode}
