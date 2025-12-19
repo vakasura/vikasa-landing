@@ -16,9 +16,17 @@ export default function Home() {
     setIsDarkMode(!isDarkMode);
   };
 
-  const handleMainClick = (e: React.MouseEvent | React.TouchEvent) => {
+  const handleMainClick = (e: React.MouseEvent) => {
     // Only toggle if not clicking the button
     if (!(e.target as HTMLElement).closest('.contact-button')) {
+      toggleDarkMode();
+    }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    // Only toggle if not touching the button
+    if (!(e.target as HTMLElement).closest('.contact-button')) {
+      e.preventDefault(); // Prevent click event from firing
       toggleDarkMode();
     }
   };
@@ -29,7 +37,7 @@ export default function Home() {
         isDarkMode ? 'bg-black text-white' : 'bg-white text-black'
       }`}
       onClick={handleMainClick}
-      onTouchStart={handleMainClick}
+      onTouchStart={handleTouchStart}
     >
       {/* Animated Background */}
       <div className="background-gradient" />
