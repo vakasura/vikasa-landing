@@ -2,35 +2,28 @@
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  const handleButtonClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Check if it's a touch device
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-    if (isTouchDevice && !isAnimating) {
-      e.preventDefault();
-      setIsAnimating(true);
-
-      // Show animation for 1.5 seconds, then navigate
-      setTimeout(() => {
-        window.open("https://cal.com/gaurav-ranganath-qtw4rb/30min", "_blank", "noopener,noreferrer");
-        setIsAnimating(false);
-      }, 1500);
-    }
-    // Desktop: let the link work normally with hover effect
-  };
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   return (
-    <main className="min-h-screen bg-white text-black flex items-center justify-center">
+    <main className="min-h-screen bg-white text-black flex items-center justify-center transition-colors duration-700 ease-in-out relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="background-gradient" />
+
       {/* Hero Section */}
-      <section>
+      <section className="relative z-10">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="logo-container mb-4 mx-auto relative" style={{ width: '200px', height: '200px' }}>
+            <div
+              className={`logo-container mb-4 mx-auto relative ${isLoaded ? "logo-loaded" : ""}`}
+              style={{ width: "200px", height: "200px" }}
+            >
               <Image
                 src="/vikasa-logo.svg"
                 alt="Vikasa Logo"
@@ -38,30 +31,32 @@ export default function Home() {
                 height={200}
                 className="logo-slow absolute inset-0"
               />
-              <Image
-                src="/vikasa-logo.svg"
-                alt="Vikasa Logo"
-                width={200}
-                height={200}
-                className="logo-fast absolute inset-0"
-              />
             </div>
-            <h1 className="text-4xl md:text-5xl font-light mb-8 tracking-tight relative z-10">
+            <h1
+              className={`text-4xl md:text-5xl font-light mb-8 tracking-tight relative z-10 ${
+                isLoaded ? "title-loaded" : ""
+              }`}
+            >
               vikasa
             </h1>
-            <p className="text-lg md:text-xl font-light mb-8 max-w-2xl mx-auto relative z-10">
+            <p
+              className={`text-lg md:text-xl font-light mb-8 max-w-2xl mx-auto relative z-10 ${
+                isLoaded ? "description-loaded" : ""
+              }`}
+            >
               Venture advisory and hands-on support for early-stage Canadian founders
             </p>
             <Button
               size="lg"
-              className={`button-creative rounded-none font-light px-8 relative z-10 ${isAnimating ? 'button-animating' : ''}`}
+              className={`contact-button bg-black text-white hover:bg-white hover:text-black rounded-lg font-light px-8 relative z-10 transition-all duration-700 ease-in-out hover:-translate-y-1 hover:shadow-2xl ${
+                isLoaded ? "button-loaded" : ""
+              }`}
               asChild
             >
               <a
                 href="https://cal.com/gaurav-ranganath-qtw4rb/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={handleButtonClick}
               >
                 Get in Touch
               </a>
