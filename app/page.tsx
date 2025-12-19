@@ -29,7 +29,7 @@ export default function Home() {
         isDarkMode ? 'bg-black text-white' : 'bg-white text-black'
       }`}
       onClick={handleMainClick}
-      onTouchEnd={handleMainClick}
+      onTouchStart={handleMainClick}
     >
       {/* Animated Background */}
       <div className="background-gradient" />
