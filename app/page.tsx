@@ -16,12 +16,20 @@ export default function Home() {
     setIsDarkMode(!isDarkMode);
   };
 
+  const handleMainClick = (e: React.MouseEvent | React.TouchEvent) => {
+    // Only toggle if not clicking the button
+    if (!(e.target as HTMLElement).closest('.contact-button')) {
+      toggleDarkMode();
+    }
+  };
+
   return (
     <main
       className={`h-screen flex items-center justify-center transition-colors duration-700 ease-in-out relative overflow-hidden ${
         isDarkMode ? 'bg-black text-white' : 'bg-white text-black'
       }`}
-      onClick={toggleDarkMode}
+      onClick={handleMainClick}
+      onTouchEnd={handleMainClick}
     >
       {/* Animated Background */}
       <div className="background-gradient" />
