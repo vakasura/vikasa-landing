@@ -98,9 +98,6 @@ export default function Home() {
                 Get in Touch
               </a>
             </Button>
-
-            {/* Mobile hint */}
-            <p className="text-xs mt-4 opacity-50 md:hidden">Tap anywhere to toggle theme</p>
           </div>
         </div>
       </section>
