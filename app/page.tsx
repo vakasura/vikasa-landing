@@ -16,6 +16,22 @@ export default function Home() {
       {/* Animated Background */}
       <div className="background-gradient" />
 
+      {/* Night Sky Stars */}
+      <div className="stars-container">
+        {[...Array(50)].map((_, i) => (
+          <div
+            key={i}
+            className="star"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 2}s`,
+            }}
+          />
+        ))}
+      </div>
+
       {/* Hero Section */}
       <section className="relative z-10">
         <div className="container mx-auto px-6">

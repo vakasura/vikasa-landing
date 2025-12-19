@@ -129,6 +129,41 @@
   pointer-events: none;
 }
 
+/* Night Sky Stars */
+.stars-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  z-index: 1;
+}
+
+body:has(.contact-button:hover) .stars-container {
+  opacity: 1;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+  animation: pulse-star infinite ease-in-out;
+}
+
+@keyframes pulse-star {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
 /* Invert entire page when button is hovered */
 body:has(.contact-button:hover) main {
   background-color: black;
